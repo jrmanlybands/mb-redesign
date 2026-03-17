@@ -1,0 +1,1622 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manly Bands | Handcrafted Men's Wedding Bands</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    /* ========== RESET & BASE ========== */
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      color: #1a1a1a;
+      background: #fff;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { text-decoration: none; color: inherit; }
+    button { cursor: pointer; border: none; background: none; font-family: inherit; }
+    img { max-width: 100%; display: block; }
+    ul { list-style: none; }
+
+    /* ========== UTILITY ========== */
+    .container { max-width: 1440px; margin: 0 auto; padding: 0 40px; }
+    .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0); }
+
+    /* ========== TOP BENEFITS BAR ========== */
+    .benefits-bar {
+      background: #1a1a1a;
+      color: #fff;
+      font-size: 12px;
+      letter-spacing: 0.5px;
+      padding: 8px 0;
+      text-transform: uppercase;
+      font-weight: 500;
+    }
+    .benefits-bar .container {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      align-items: center;
+    }
+    .benefits-bar .benefit {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .benefits-bar .benefit svg { flex-shrink: 0; }
+    .benefits-bar .divider {
+      width: 1px;
+      height: 14px;
+      background: rgba(255,255,255,0.3);
+    }
+
+    /* ========== HEADER / NAV ========== */
+    .header {
+      background: #fff;
+      border-bottom: 1px solid #eee;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      transition: box-shadow 0.3s;
+    }
+    .header.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,0.08); }
+    .header .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+    }
+    .logo {
+      font-family: 'Oswald', sans-serif;
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .logo svg { width: 28px; height: 28px; }
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      align-items: center;
+    }
+    .nav-links a {
+      font-family: 'Oswald', sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #1a1a1a;
+      transition: color 0.2s;
+      position: relative;
+    }
+    .nav-links a:hover { color: #c8922a; }
+    .nav-links a.sale { color: #c8922a; }
+    .nav-icons {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
+    .nav-icons button {
+      color: #1a1a1a;
+      transition: color 0.2s;
+    }
+    .nav-icons button:hover { color: #c8922a; }
+
+    /* ========== PROMO BANNER ========== */
+    .promo-banner {
+      background: #c8922a;
+      color: #fff;
+      text-align: center;
+      padding: 10px 20px;
+      font-family: 'Oswald', sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+    .promo-banner a {
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    /* ========== HERO ========== */
+    .hero {
+      position: relative;
+      height: 620px;
+      overflow: hidden;
+      background: #0d0d0d;
+    }
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background: url('https://images.unsplash.com/photo-1611955167811-4711904bb9f8?w=1600&q=80') center/cover no-repeat;
+      opacity: 0.85;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 0 80px;
+      max-width: 650px;
+    }
+    .hero h1 {
+      font-family: 'Oswald', sans-serif;
+      font-size: 58px;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: #fff;
+      line-height: 1.05;
+      margin-bottom: 16px;
+    }
+    .hero .tagline {
+      font-family: 'Oswald', sans-serif;
+      font-size: 16px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.85);
+      margin-bottom: 32px;
+      font-weight: 500;
+    }
+    .hero-ctas {
+      display: flex;
+      gap: 16px;
+    }
+    .btn-primary {
+      background: #c8922a;
+      color: #fff;
+      font-family: 'Oswald', sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 14px 32px;
+      border-radius: 12px;
+      transition: all 0.3s;
+    }
+    .btn-primary:hover { background: #b07d1f; transform: translateY(-1px); }
+    .btn-outline {
+      background: transparent;
+      color: #c8922a;
+      font-family: 'Oswald', sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 14px 32px;
+      border: 2px solid #c8922a;
+      border-radius: 12px;
+      transition: all 0.3s;
+    }
+    .btn-outline:hover { background: #c8922a; color: #fff; }
+    .btn-outline-white {
+      background: transparent;
+      color: #fff;
+      font-family: 'Oswald', sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 14px 32px;
+      border: 2px solid #fff;
+      border-radius: 12px;
+      transition: all 0.3s;
+    }
+    .btn-outline-white:hover { background: #fff; color: #1a1a1a; }
+
+    /* ========== SHOP BY MATERIAL (mirrors Knockaround's "Shop by Frame Style") ========== */
+    .shop-by-material {
+      padding: 60px 0;
+      background: #fff;
+    }
+    .shop-by-material .container {
+      max-width: 100%;
+      padding: 0 0 0 40px;
+    }
+    .shop-by-material .section-title {
+      padding-right: 40px;
+    }
+    .section-title {
+      font-family: 'Oswald', sans-serif;
+      font-size: 36px;
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-bottom: 36px;
+    }
+    .material-grid {
+      display: flex;
+      gap: 24px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      padding-bottom: 8px;
+    }
+    .material-grid::-webkit-scrollbar { display: none; }
+    .material-item {
+      text-align: center;
+      cursor: pointer;
+      transition: transform 0.2s;
+      flex-shrink: 0;
+      width: 120px;
+      scroll-snap-align: start;
+    }
+    .material-item:hover { transform: translateY(-4px); }
+    .material-item .material-img {
+      width: 100%;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      overflow: hidden;
+      margin-bottom: 12px;
+      background: #f5f5f5;
+    }
+    .material-item .material-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .material-item span {
+      font-family: 'Oswald', sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    /* ========== FULL-WIDTH BANNER (mirrors Knockaround's Prescription section) ========== */
+    .build-banner {
+      position: relative;
+      height: 500px;
+      overflow: hidden;
+    }
+    .build-banner-bg {
+      position: absolute;
+      inset: 0;
+      background: url('https://images.unsplash.com/photo-1515377905703-c4788e51af15?w=1600&q=80') center/cover no-repeat;
+    }
+    .build-banner-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.2) 60%, transparent 100%);
+    }
+    .build-banner-content {
+      position: relative;
+      z-index: 2;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 0 80px;
+      max-width: 550px;
+    }
+    .build-banner h2 {
+      font-family: 'Oswald', sans-serif;
+      font-size: 48px;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: #fff;
+      line-height: 1.1;
+      margin-bottom: 12px;
+    }
+    .build-banner p {
+      color: rgba(255,255,255,0.85);
+      font-size: 16px;
+      font-style: italic;
+      margin-bottom: 28px;
+    }
+
+    /* ========== BEST SELLERS (mirrors Knockaround's Best Sellers) ========== */
+    .best-sellers {
+      padding: 60px 0;
+      background: #fff;
+    }
+    .best-sellers .container {
+      max-width: 100%;
+      padding: 0 0 0 40px;
+    }
+    .tabs {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 36px;
+    }
+    .tab {
+      font-family: 'Oswald', sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      padding: 8px 20px;
+      border-radius: 12px;
+      border: 2px solid #ddd;
+      color: #666;
+      transition: all 0.2s;
+    }
+    .tab:hover { border-color: #1a1a1a; color: #1a1a1a; }
+    .tab.active {
+      background: #1a1a1a;
+      color: #fff;
+      border-color: #1a1a1a;
+    }
+    .best-sellers-title-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding-right: 40px;
+    }
+    .carousel-nav {
+      display: flex;
+      gap: 8px;
+    }
+    .carousel-btn {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: 1px solid #ddd;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s;
+      color: #999;
+    }
+    .carousel-btn:hover { border-color: #1a1a1a; color: #1a1a1a; }
+    .products-grid {
+      display: flex;
+      gap: 24px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      padding-bottom: 8px;
+    }
+    .products-grid::-webkit-scrollbar { display: none; }
+    .product-card {
+      position: relative;
+      cursor: pointer;
+      transition: transform 0.2s;
+      flex-shrink: 0;
+      width: 280px;
+      scroll-snap-align: start;
+    }
+    .product-card:hover { transform: translateY(-4px); }
+    .product-card .badge {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      background: #c8922a;
+      color: #fff;
+      font-family: 'Oswald', sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 6px;
+      z-index: 2;
+    }
+    .product-card .product-img {
+      aspect-ratio: 1;
+      background: #f5f5f5;
+      overflow: hidden;
+      margin-bottom: 12px;
+      border-radius: 12px;
+    }
+    .product-card .product-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s;
+    }
+    .product-card:hover .product-img img { transform: scale(1.05); }
+    .product-rating {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 4px;
+    }
+    .stars { color: #c8922a; font-size: 13px; letter-spacing: 1px; }
+    .rating-num { font-size: 12px; color: #999; }
+    .product-name {
+      font-family: 'Oswald', sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .product-name .style {
+      font-weight: 400;
+      color: #888;
+    }
+    .product-price {
+      font-size: 14px;
+      font-weight: 600;
+      margin-top: 2px;
+    }
+    .product-price .original {
+      text-decoration: line-through;
+      color: #999;
+      font-weight: 400;
+      margin-right: 6px;
+    }
+    .more-colors {
+      font-size: 12px;
+      color: #c8922a;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      font-weight: 600;
+      margin-top: 4px;
+    }
+
+    /* ========== COLLECTION TILES (horizontal scroll, rounded cards like Knockaround) ========== */
+    .collection-tiles {
+      padding: 0;
+      background: #f7f7f7;
+    }
+    .collection-tiles .container {
+      max-width: 100%;
+      padding: 0 0 0 40px;
+    }
+    .collection-tiles .section-title {
+      padding-right: 40px;
+    }
+    .tiles-grid {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      scrollbar-width: none;
+    }
+    .tiles-grid::-webkit-scrollbar { display: none; }
+    .tile {
+      position: relative;
+      min-width: 425px;
+      height: 300px;
+      overflow: hidden;
+      border-radius: 12px;
+      cursor: pointer;
+      flex-shrink: 0;
+      scroll-snap-align: start;
+    }
+    .tile img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s;
+    }
+    .tile:hover img { transform: scale(1.05); }
+    .tile-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 30%, rgba(0,0,0,0.65) 100%);
+      border-radius: 12px;
+    }
+    .tile-label {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      right: 20px;
+    }
+    .tile-label h3 {
+      font-family: 'Oswald', sans-serif;
+      font-size: 20px;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: #fff;
+      letter-spacing: 1px;
+    }
+    .tile-label p {
+      font-size: 12px;
+      color: rgba(255,255,255,0.8);
+      font-style: italic;
+    }
+
+    /* ========== CUSTOM BUILDER SECTION (mirrors Knockaround's cyan Custom Shop) ========== */
+    .custom-builder {
+      position: relative;
+      height: 520px;
+      overflow: hidden;
+      background: #1a1a1a;
+    }
+    .custom-builder-bg {
+      position: absolute;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      width: 55%;
+      background: url('https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=1600&q=80') center/cover no-repeat;
+    }
+    .custom-builder-gradient {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, #1a1a1a 40%, rgba(26,26,26,0.3) 70%, transparent 100%);
+    }
+    .custom-builder-content {
+      position: relative;
+      z-index: 2;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 0 80px;
+      max-width: 550px;
+    }
+    .custom-builder .eyebrow {
+      font-family: 'Oswald', sans-serif;
+      font-size: 14px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #c8922a;
+      margin-bottom: 16px;
+      font-weight: 500;
+    }
+    .custom-builder h2 {
+      font-family: 'Oswald', sans-serif;
+      font-size: 52px;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: #fff;
+      line-height: 1.05;
+      margin-bottom: 20px;
+    }
+    .custom-builder p {
+      color: rgba(255,255,255,0.7);
+      font-size: 16px;
+      line-height: 1.7;
+      margin-bottom: 32px;
+    }
+
+    /* ========== LICENSED COLLECTIONS (mirrors Knockaround's Collabs) ========== */
+    .licensed {
+      padding: 0;
+      background: #fff;
+    }
+    .licensed .container {
+      max-width: 100%;
+      padding: 0 0 0 40px;
+    }
+    .licensed .licensed-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding-right: 40px;
+      padding-top: 60px;
+    }
+    .licensed .eyebrow {
+      font-size: 14px;
+      color: #888;
+      letter-spacing: 1px;
+      margin-bottom: 4px;
+    }
+    .licensed-grid {
+      display: flex;
+      gap: 20px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      padding-top: 36px;
+      padding-bottom: 60px;
+      scrollbar-width: none;
+    }
+    .licensed-grid::-webkit-scrollbar { display: none; }
+    .licensed-card {
+      flex-shrink: 0;
+      scroll-snap-align: start;
+      width: 425px;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+    .licensed-card:hover { transform: translateY(-4px); }
+    .licensed-card .licensed-img {
+      width: 100%;
+      height: 425px;
+      border-radius: 12px;
+      overflow: hidden;
+      margin-bottom: 16px;
+      background: #f0f0f0;
+    }
+    .licensed-card .licensed-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s;
+    }
+    .licensed-card:hover .licensed-img img { transform: scale(1.05); }
+    .licensed-card .licensed-name {
+      font-family: 'Oswald', sans-serif;
+      font-size: 18px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #1a1a1a;
+    }
+
+    /* ========== STYLE GRID (mirrors Knockaround's Collabs section) ========== */
+    .style-section {
+      padding: 60px 0;
+      background: #fff;
+    }
+    .style-section .section-title { text-align: center; }
+    .style-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 36px;
+    }
+    .style-card {
+      position: relative;
+      height: 380px;
+      overflow: hidden;
+      cursor: pointer;
+      border-radius: 12px;
+    }
+    .style-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s;
+    }
+    .style-card:hover img { transform: scale(1.06); }
+    .style-card-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.3);
+      transition: background 0.3s;
+    }
+    .style-card:hover .style-card-overlay { background: rgba(0,0,0,0.15); }
+    .style-tag {
+      position: absolute;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-family: 'Oswald', sans-serif;
+      font-size: 16px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #fff;
+      padding: 8px 24px;
+      border: 2px solid rgba(255,255,255,0.8);
+      border-radius: 12px;
+      background: rgba(0,0,0,0.2);
+      backdrop-filter: blur(4px);
+    }
+
+    /* ========== DARE BANNER (mirrors another Knockaround lifestyle banner) ========== */
+    .dare-banner {
+      position: relative;
+      height: 450px;
+      overflow: hidden;
+    }
+    .dare-banner-bg {
+      position: absolute;
+      inset: 0;
+      background: url('https://images.unsplash.com/photo-1519741497674-611481863552?w=1600&q=80') center/cover no-repeat;
+    }
+    .dare-banner-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.2) 50%, transparent 100%);
+    }
+    .dare-banner-content {
+      position: relative;
+      z-index: 2;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 0 80px;
+      max-width: 550px;
+    }
+    .dare-banner h2 {
+      font-family: 'Oswald', sans-serif;
+      font-size: 52px;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: #fff;
+      line-height: 1.05;
+      margin-bottom: 12px;
+    }
+    .dare-banner p {
+      color: rgba(255,255,255,0.85);
+      font-size: 18px;
+      font-weight: 500;
+      margin-bottom: 28px;
+    }
+
+    /* ========== PRESS / SOCIAL PROOF (mirrors Knockaround's Celebs section) ========== */
+    .press-section {
+      padding: 60px 0;
+      background: #fff;
+      text-align: center;
+    }
+    .press-section .quote {
+      font-family: 'Oswald', sans-serif;
+      font-size: 28px;
+      font-weight: 500;
+      max-width: 800px;
+      margin: 0 auto 40px;
+      line-height: 1.4;
+      color: #333;
+    }
+    .press-logos {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 50px;
+      flex-wrap: wrap;
+    }
+    .press-logos .press-logo {
+      font-family: 'Oswald', sans-serif;
+      font-size: 18px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: #bbb;
+      transition: color 0.3s;
+    }
+    .press-logos .press-logo:hover { color: #666; }
+    /* Specific press logo styles to mimic real logos */
+    .press-logo.rolling-stone { font-family: Georgia, serif; font-style: italic; font-size: 20px; letter-spacing: 0; }
+    .press-logo.wsj { font-family: Georgia, serif; font-size: 14px; letter-spacing: 1px; }
+    .press-logo.gq { font-weight: 900; font-size: 32px; letter-spacing: 0; }
+    .press-logo.variety { font-style: italic; font-family: Georgia, serif; font-size: 22px; letter-spacing: 0; }
+    .press-logo.forbes { letter-spacing: 3px; font-size: 20px; }
+    .press-logo.nerdist { font-size: 16px; }
+
+    /* ========== MILITARY SECTION ========== */
+    .military-section {
+      position: relative;
+      height: 420px;
+      overflow: hidden;
+    }
+    .military-bg {
+      position: absolute;
+      inset: 0;
+      background: url('https://images.unsplash.com/photo-1579912437766-7896df6d3cd3?w=1600&q=80') center/cover no-repeat;
+    }
+    .military-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.2) 50%, transparent 100%);
+    }
+    .military-content {
+      position: relative;
+      z-index: 2;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 0 80px;
+      max-width: 550px;
+    }
+    .military-content h2 {
+      font-family: 'Oswald', sans-serif;
+      font-size: 48px;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: #fff;
+      line-height: 1.05;
+      margin-bottom: 12px;
+    }
+    .military-content p {
+      color: rgba(255,255,255,0.85);
+      font-size: 15px;
+      font-weight: 500;
+      margin-bottom: 28px;
+    }
+
+    /* ========== NEED HELP / FOOTER (mirrors Knockaround) ========== */
+    .footer {
+      background: #111;
+      color: #fff;
+      padding: 60px 0 30px;
+    }
+    .footer-help {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+    .footer-help h3 {
+      font-family: 'Oswald', sans-serif;
+      font-size: 36px;
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    .footer-help p {
+      color: rgba(255,255,255,0.6);
+      margin-bottom: 24px;
+    }
+    .footer-help-btns {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+    }
+    .footer-help-btn {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: transparent;
+      border: 1px solid rgba(255,255,255,0.3);
+      border-radius: 12px;
+      color: #fff;
+      font-family: 'Oswald', sans-serif;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 12px 24px;
+      transition: all 0.3s;
+    }
+    .footer-help-btn:hover {
+      background: rgba(255,255,255,0.1);
+      border-color: rgba(255,255,255,0.6);
+    }
+    .footer-help-btn svg { flex-shrink: 0; }
+    .footer-columns {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1.5fr;
+      gap: 60px;
+      padding-top: 40px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+    }
+    .footer-col h4 {
+      font-family: 'Oswald', sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 20px;
+    }
+    .footer-col a {
+      display: block;
+      color: rgba(255,255,255,0.6);
+      font-size: 14px;
+      padding: 4px 0;
+      transition: color 0.2s;
+    }
+    .footer-col a:hover { color: #c8922a; }
+    .footer-newsletter h4 { margin-bottom: 12px; }
+    .footer-newsletter .cta-text {
+      font-family: 'Oswald', sans-serif;
+      font-size: 18px;
+      font-weight: 600;
+      color: #c8922a;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 16px;
+    }
+    .newsletter-form {
+      display: flex;
+      gap: 0;
+    }
+    .newsletter-form input {
+      flex: 1;
+      padding: 12px 16px;
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-right: none;
+      border-radius: 16px 0 0 16px;
+      color: #fff;
+      font-size: 14px;
+      outline: none;
+      transition: border-color 0.3s;
+    }
+    .newsletter-form input::placeholder { color: rgba(255,255,255,0.4); }
+    .newsletter-form input:focus { border-color: #c8922a; }
+    .newsletter-form button {
+      padding: 12px 20px;
+      background: #c8922a;
+      border: 1px solid #c8922a;
+      border-radius: 0 16px 16px 0;
+      color: #fff;
+      transition: background 0.3s;
+    }
+    .newsletter-form button:hover { background: #b07d1f; }
+    .footer-bottom {
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 12px;
+      color: rgba(255,255,255,0.4);
+    }
+    .footer-social {
+      display: flex;
+      gap: 16px;
+    }
+    .footer-social a {
+      color: rgba(255,255,255,0.4);
+      transition: color 0.3s;
+    }
+    .footer-social a:hover { color: #c8922a; }
+
+    /* ========== REAL RINGS SECTION ========== */
+    .real-rings {
+      padding: 80px 0;
+      background: #fff;
+    }
+    .real-rings .container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+    .real-rings-img {
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    .real-rings-img img {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+    }
+    .real-rings-text h2 {
+      font-family: 'Oswald', sans-serif;
+      font-size: 44px;
+      font-weight: 700;
+      text-transform: uppercase;
+      line-height: 1.1;
+      margin-bottom: 20px;
+    }
+    .real-rings-text p {
+      color: #555;
+      font-size: 16px;
+      line-height: 1.7;
+      margin-bottom: 28px;
+    }
+
+    /* ========== MATERIALS CIRCLES (improved for product rings) ========== */
+    .material-circle {
+      width: 100%;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #f0f0f0;
+    }
+    /* Material color representations */
+    .mat-gold { background: linear-gradient(135deg, #d4a855, #c9953a, #e6c47a); }
+    .mat-titanium { background: linear-gradient(135deg, #b0b0b0, #d4d4d4, #8a8a8a); }
+    .mat-tungsten { background: linear-gradient(135deg, #4a4a4a, #6a6a6a, #3a3a3a); }
+    .mat-wood { background: linear-gradient(135deg, #8B4513, #a0522d, #6b3410); }
+    .mat-carbon { background: linear-gradient(135deg, #222, #444, #111); }
+    .mat-meteorite { background: linear-gradient(135deg, #555, #777, #333); }
+    .mat-damascus { background: linear-gradient(135deg, #5a5a5a, #8a8a8a, #4a4a4a); }
+    .mat-rose { background: linear-gradient(135deg, #b76e79, #d4a0a7, #9a5561); }
+    .mat-black-zirconium { background: linear-gradient(135deg, #1a1a1a, #333, #0d0d0d); }
+    .mat-antler { background: linear-gradient(135deg, #d2c5a0, #bfb088, #e0d4b0); }
+    .mat-silicone { background: linear-gradient(135deg, #888, #aaa, #666); }
+    .mat-ceramic { background: linear-gradient(135deg, #f5f5f0, #e8e8e0, #ddd8d0); }
+    .mat-platinum { background: linear-gradient(135deg, #c0c0c0, #e5e5e5, #a0a0a0); }
+    .mat-dino { background: linear-gradient(135deg, #5c4033, #7a5a45, #4a3025); }
+
+    /* ========== RESPONSIVE ========== */
+    @media (max-width: 1024px) {
+      .material-item { width: 100px; }
+      .product-card { width: 260px; }
+      .tile { min-width: 280px; }
+    }
+    @media (max-width: 768px) {
+      .container { padding: 0 20px; }
+      .benefits-bar .container { gap: 16px; font-size: 10px; }
+      .nav-links { display: none; }
+      .hero { height: 480px; }
+      .hero h1 { font-size: 38px; }
+      .hero-content { padding: 0 30px; }
+      .shop-by-material .container {
+        max-width: 100%;
+        padding: 0 20px;
+      }
+      .material-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        overflow-x: visible;
+      }
+      .material-item {
+        width: auto;
+        flex-shrink: unset;
+      }
+      .material-item .material-img {
+        width: 120px;
+        margin: 0 auto 8px;
+      }
+      .material-item span {
+        font-size: 12px;
+      }
+      .best-sellers .container {
+        padding: 0 0 0 16px;
+      }
+      .tabs {
+        gap: 6px;
+        margin-bottom: 20px;
+      }
+      .tab {
+        font-size: 11px;
+        padding: 6px 12px;
+        letter-spacing: 0.5px;
+        border-radius: 10px;
+        border-width: 1.5px;
+      }
+      .products-grid {
+        gap: 12px;
+      }
+      .product-card { width: 250px; }
+      .tile { min-width: 385px; height: 290px; }
+      .footer-columns { grid-template-columns: 1fr; gap: 30px; }
+      .real-rings .container { grid-template-columns: 1fr; }
+      .style-grid { grid-template-columns: 1fr; }
+      .licensed-logos { gap: 30px; }
+      .build-banner, .dare-banner, .military-section { height: 360px; }
+      .build-banner h2, .dare-banner h2, .military-content h2 { font-size: 36px; }
+      .build-banner-content, .dare-banner-content, .military-content, .custom-builder-content { padding: 0 30px; }
+    }
+  </style>
+</head>
+<body>
+  <!-- ===== TOP BENEFITS BAR ===== -->
+  <div class="benefits-bar">
+    <div class="container">
+      <div class="benefit">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        Lifetime Warranty
+      </div>
+      <div class="divider"></div>
+      <div class="benefit">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="22" height="18" rx="2"/><path d="M1 10h22"/></svg>
+        Free Silicone with Every Ring
+      </div>
+      <div class="divider"></div>
+      <div class="benefit">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        Free U.S. Shipping
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== HEADER ===== -->
+  <header class="header" id="header">
+    <div class="container">
+      <a href="#" class="logo">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 3L3 7l4 4-4 4 4 4 4-4 4 4 4-4-4-4 4-4-4-4-4 4z"/></svg>
+        Manly Bands
+      </a>
+      <nav class="nav-links">
+        <a href="#">Rings for Him</a>
+        <a href="#">Rings for Her</a>
+        <a href="#">Chains</a>
+        <a href="#">Gifts</a>
+        <a href="#">About Us</a>
+        <a href="#" class="sale">Last Chance</a>
+      </nav>
+      <div class="nav-icons">
+        <button aria-label="Search">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        </button>
+        <button aria-label="Account">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        </button>
+        <button aria-label="Cart">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== PROMO BANNER ===== -->
+  <div class="promo-banner">
+    Up to 30% Off Sitewide** | Free Silicone with Every Ring | <a href="#">Shop Now</a>
+  </div>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <h1>Men's Wedding Bands Reimagined</h1>
+      <div class="tagline">Unique &middot; Handcrafted &middot; Badass</div>
+      <div class="hero-ctas">
+        <a href="#" class="btn-primary">Shop Most Popular</a>
+        <a href="#" class="btn-outline-white">Build Your Own</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SHOP BY MATERIAL ===== -->
+  <section class="shop-by-material">
+    <div class="container">
+      <h2 class="section-title">Shop by Material</h2>
+      <div class="material-grid">
+        <a href="#" class="material-item">
+          <div class="material-img"><div class="material-circle mat-gold"></div></div>
+          <span>Gold</span>
+        </a>
+        <a href="#" class="material-item">
+          <div class="material-img"><div class="material-circle mat-titanium"></div></div>
+          <span>Titanium</span>
+        </a>
+        <a href="#" class="material-item">
+          <div class="material-img"><div class="material-circle mat-tungsten"></div></div>
+          <span>Tungsten</span>
+        </a>
+        <a href="#" class="material-item">
+          <div class="material-img"><div class="material-circle mat-wood"></div></div>
+          <span>Wood</span>
+        </a>
+        <a href="#" class="material-item">
+          <div class="material-img"><div class="material-circle mat-carbon"></div></div>
+          <span>Carbon Fiber</span>
+        </a>
+        <a href="#" class="material-item">
+          <div class="material-img"><div class="material-circle mat-meteorite"></div></div>
+          <span>Meteorite</span>
+        </a>
+        <a href="#" class="material-item">
+          <div class="material-img"><div class="material-circle mat-damascus"></div></div>
+          <span>Damascus</span>
+        </a>
+        <a href="#" class="material-item">
+          <div class="material-img"><div class="material-circle mat-rose"></div></div>
+          <span>Rose Gold</span>
+        </a>
+        <a href="#" class="material-item">
+          <div class="material-img"><div class="material-circle mat-black-zirconium"></div></div>
+          <span>Black Zirconium</span>
+        </a>
+        <a href="#" class="material-item">
+          <div class="material-img"><div class="material-circle mat-antler"></div></div>
+          <span>Antler</span>
+        </a>
+        <a href="#" class="material-item">
+          <div class="material-img"><div class="material-circle mat-silicone"></div></div>
+          <span>Silicone</span>
+        </a>
+        <a href="#" class="material-item">
+          <div class="material-img"><div class="material-circle mat-ceramic"></div></div>
+          <span>Ceramic</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== BUILD YOUR OWN BANNER ===== -->
+  <section class="build-banner">
+    <div class="build-banner-bg"></div>
+    <div class="build-banner-overlay"></div>
+    <div class="build-banner-content">
+      <h2>Build Your Own Band</h2>
+      <p>Design it your way. We'll handcraft it.</p>
+      <div><a href="#" class="btn-outline-white">Start Building</a></div>
+    </div>
+  </section>
+
+  <!-- ===== BEST SELLERS ===== -->
+  <section class="best-sellers">
+    <div class="container">
+      <div class="best-sellers-title-row">
+        <h2 class="section-title">Best Sellers</h2>
+        <div class="carousel-nav">
+          <button class="carousel-btn" aria-label="Previous" data-dir="prev">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+          </button>
+          <button class="carousel-btn" aria-label="Next" data-dir="next">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+          </button>
+        </div>
+      </div>
+      <div class="tabs">
+        <button class="tab active">All</button>
+        <button class="tab">Gold</button>
+        <button class="tab">Black</button>
+        <button class="tab">Tungsten</button>
+        <button class="tab">Titanium</button>
+      </div>
+      <div class="products-grid">
+        <div class="product-card">
+          <div class="badge">30% Off</div>
+          <div class="product-img">
+            <img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=400&q=80" alt="The CEO">
+          </div>
+          <div class="product-rating">
+            <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+            <span class="rating-num">4.9/5</span>
+          </div>
+          <div class="product-name">The CEO <span class="style">| Gold</span></div>
+          <div class="product-price"><span class="original">$280</span>$196</div>
+          <div class="more-colors">+8 More Materials</div>
+        </div>
+        <div class="product-card">
+          <div class="badge">30% Off</div>
+          <div class="product-img">
+            <img src="https://images.unsplash.com/photo-1611955167811-4711904bb9f8?w=400&q=80" alt="The Cowboy">
+          </div>
+          <div class="product-rating">
+            <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+            <span class="rating-num">4.8/5</span>
+          </div>
+          <div class="product-name">The Cowboy <span class="style">| Wood Inlay</span></div>
+          <div class="product-price"><span class="original">$260</span>$182</div>
+          <div class="more-colors">+5 More Materials</div>
+        </div>
+        <div class="product-card">
+          <div class="badge">30% Off</div>
+          <div class="product-img">
+            <img src="https://images.unsplash.com/photo-1602751584552-8ba73aad10e1?w=400&q=80" alt="The Baller">
+          </div>
+          <div class="product-rating">
+            <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+            <span class="rating-num">4.9/5</span>
+          </div>
+          <div class="product-name">The Baller <span class="style">| Black Zirconium</span></div>
+          <div class="product-price"><span class="original">$260</span>$182</div>
+          <div class="more-colors">+6 More Materials</div>
+        </div>
+        <div class="product-card">
+          <div class="badge">30% Off</div>
+          <div class="product-img">
+            <img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?w=400&q=80" alt="The Rockstar">
+          </div>
+          <div class="product-rating">
+            <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+            <span class="rating-num">4.8/5</span>
+          </div>
+          <div class="product-name">The Rockstar <span class="style">| Tungsten</span></div>
+          <div class="product-price"><span class="original">$260</span>$182</div>
+          <div class="more-colors">+4 More Materials</div>
+        </div>
+        <div class="product-card">
+          <div class="badge">30% Off</div>
+          <div class="product-img">
+            <img src="https://images.unsplash.com/photo-1590736969955-71cc94901144?w=400&q=80" alt="The Boss">
+          </div>
+          <div class="product-rating">
+            <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+            <span class="rating-num">4.9/5</span>
+          </div>
+          <div class="product-name">The Boss <span class="style">| Rose Gold</span></div>
+          <div class="product-price"><span class="original">$280</span>$196</div>
+          <div class="more-colors">+7 More Materials</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== COLLECTION TILES ===== -->
+  <section class="collection-tiles">
+    <div class="container">
+      <div class="tiles-grid">
+        <div class="tile">
+          <img src="https://images.unsplash.com/photo-1602751584552-8ba73aad10e1?w=600&q=80" alt="Most Popular">
+          <div class="tile-overlay"></div>
+          <div class="tile-label">
+            <h3>Most Popular</h3>
+            <p>Our fan favorites</p>
+          </div>
+        </div>
+        <div class="tile">
+          <img src="https://images.unsplash.com/photo-1573164574572-cb89e39749b4?w=600&q=80" alt="Military Heritage">
+          <div class="tile-overlay"></div>
+          <div class="tile-label">
+            <h3>Military Heritage</h3>
+            <p>Authentic historic materials</p>
+          </div>
+        </div>
+        <div class="tile">
+          <img src="https://images.unsplash.com/photo-1527281400683-1aae777175f8?w=600&q=80" alt="Jack Daniel's">
+          <div class="tile-overlay"></div>
+          <div class="tile-label">
+            <h3>Jack Daniel's&reg;</h3>
+            <p>Whiskey barrel crafted</p>
+          </div>
+        </div>
+        <div class="tile">
+          <img src="https://images.unsplash.com/photo-1611955167811-4711904bb9f8?w=600&q=80" alt="Lord of the Rings">
+          <div class="tile-overlay"></div>
+          <div class="tile-label">
+            <h3>Lord of the Rings&trade;</h3>
+            <p>One ring to rule them all</p>
+          </div>
+        </div>
+        <div class="tile">
+          <img src="https://images.unsplash.com/photo-1612036782180-6f0b6cd846fe?w=600&q=80" alt="DC Comics">
+          <div class="tile-overlay"></div>
+          <div class="tile-label">
+            <h3>DC&trade;</h3>
+            <p>Heroes and villains</p>
+          </div>
+        </div>
+        <div class="tile">
+          <img src="https://images.unsplash.com/photo-1510915361894-db8b60106cb1?w=600&q=80" alt="Fender">
+          <div class="tile-overlay"></div>
+          <div class="tile-label">
+            <h3>Fender&reg;</h3>
+            <p>Real guitar materials</p>
+          </div>
+        </div>
+        <div class="tile">
+          <img src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=600&q=80" alt="Jeep">
+          <div class="tile-overlay"></div>
+          <div class="tile-label">
+            <h3>Jeep&reg;</h3>
+            <p>Built for adventure</p>
+          </div>
+        </div>
+        <div class="tile">
+          <img src="https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?w=600&q=80" alt="NASA-Inspired">
+          <div class="tile-overlay"></div>
+          <div class="tile-label">
+            <h3>NASA-Inspired</h3>
+            <p>Out of this world</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CUSTOM BUILDER SECTION ===== -->
+  <section class="custom-builder">
+    <div class="custom-builder-bg"></div>
+    <div class="custom-builder-gradient"></div>
+    <div class="custom-builder-content">
+      <div class="eyebrow">You Design It, We Build It</div>
+      <h2>Build Your Own Band</h2>
+      <p>Strong. Durable. Uniquely yours. Our Custom Shop lets you create a one-of-a-kind ring. Choose your material, finish, and inlay to craft a band that's truly you.</p>
+      <div><a href="#" class="btn-outline-white">Build Your Band</a></div>
+    </div>
+  </section>
+
+  <!-- ===== LICENSED COLLECTIONS ===== -->
+  <section class="licensed">
+    <div class="container">
+      <div class="licensed-header">
+        <div>
+          <p class="eyebrow">Officially Licensed Collections</p>
+          <h2 class="section-title">Partnerships</h2>
+        </div>
+        <div class="carousel-nav">
+          <button class="carousel-btn"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg></button>
+          <button class="carousel-btn"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg></button>
+        </div>
+      </div>
+      <div class="licensed-grid">
+        <div class="licensed-card">
+          <div class="licensed-img"><img src="https://images.unsplash.com/photo-1518834107812-67b0b7c58434?w=600&q=80" alt="Lord of the Rings"></div>
+          <span class="licensed-name">Lord of the Rings</span>
+        </div>
+        <div class="licensed-card">
+          <div class="licensed-img"><img src="https://images.unsplash.com/photo-1624923101690-e3ed1cd85f45?w=600&q=80" alt="Jack Daniel's"></div>
+          <span class="licensed-name">Jack Daniel's</span>
+        </div>
+        <div class="licensed-card">
+          <div class="licensed-img"><img src="https://images.unsplash.com/photo-1612036782180-6f0b6cd846fe?w=600&q=80" alt="DC Comics"></div>
+          <span class="licensed-name">DC Comics</span>
+        </div>
+        <div class="licensed-card">
+          <div class="licensed-img"><img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=600&q=80" alt="Fender"></div>
+          <span class="licensed-name">Fender</span>
+        </div>
+        <div class="licensed-card">
+          <div class="licensed-img"><img src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=600&q=80" alt="Jeep"></div>
+          <span class="licensed-name">Jeep</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== WHAT'S YOUR STYLE ===== -->
+  <section class="style-section">
+    <div class="container">
+      <h2 class="section-title">What's Your Style?</h2>
+      <div class="style-grid">
+        <div class="style-card">
+          <img src="https://images.unsplash.com/photo-1590736969955-71cc94901144?w=600&q=80" alt="Historical">
+          <div class="style-card-overlay"></div>
+          <div class="style-tag">Historical</div>
+        </div>
+        <div class="style-card">
+          <img src="https://images.unsplash.com/photo-1543294001-f7cd5d7fb516?w=600&q=80" alt="Imaginative">
+          <div class="style-card-overlay"></div>
+          <div class="style-tag">Imaginative</div>
+        </div>
+        <div class="style-card">
+          <img src="https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?w=600&q=80" alt="Rugged">
+          <div class="style-card-overlay"></div>
+          <div class="style-tag">Rugged</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== DARE TO BE DIFFERENT ===== -->
+  <section class="dare-banner">
+    <div class="dare-banner-bg"></div>
+    <div class="dare-banner-overlay"></div>
+    <div class="dare-banner-content">
+      <h2>Dare to Be Different.</h2>
+      <p>Mediocre is for everyone else.</p>
+      <div><a href="#" class="btn-primary">Our Most Unique Styles</a></div>
+    </div>
+  </section>
+
+  <!-- ===== REAL RINGS FOR REAL MEN ===== -->
+  <section class="real-rings">
+    <div class="container">
+      <div class="real-rings-img">
+        <img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=800&q=80" alt="Real Rings">
+      </div>
+      <div class="real-rings-text">
+        <h2>Real Rings for Real Men</h2>
+        <p>Authenticity is a core value at Manly Bands. We go through great lengths to ensure that every material that we use to craft our bands are genuine and authentic. Dinosaur bones? Check. Meteorites? You bet. Wood from whiskey barrels? Pour yourself another.</p>
+        <a href="#" class="btn-primary">Exotic Rings</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PRESS / SOCIAL PROOF ===== -->
+  <section class="press-section">
+    <div class="container">
+      <div class="quote">"Male-oriented jewelry is bucking the trend and providing men with a vast array of styles."</div>
+      <div class="press-logos">
+        <span class="press-logo rolling-stone">Rolling Stone</span>
+        <span class="press-logo wsj">THE WALL STREET JOURNAL</span>
+        <span class="press-logo gq">GQ</span>
+        <span class="press-logo variety">Variety</span>
+        <span class="press-logo forbes">FORBES</span>
+        <span class="press-logo nerdist">NERDIST</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== MILITARY SECTION ===== -->
+  <section class="military-section">
+    <div class="military-bg"></div>
+    <div class="military-overlay"></div>
+    <div class="military-content">
+      <h2>Thank You for Your Service.</h2>
+      <p>Military and first responders discounts available.</p>
+      <div><a href="#" class="btn-primary">Learn More</a></div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-help">
+        <h3>Need Help?</h3>
+        <p>We're here for questions, orders, or anything in between.</p>
+        <div class="footer-help-btns">
+          <a href="#" class="footer-help-btn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="22" height="18" rx="2"/><path d="M1 10h22"/></svg>
+            Track My Order
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="#" class="footer-help-btn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 14l-4 4m0 0l4 4m-4-4h11a4 4 0 000-8h-1"/></svg>
+            Start a Return
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="#" class="footer-help-btn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg>
+            Visit Help Center
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-columns">
+        <div class="footer-col">
+          <h4>Info</h4>
+          <a href="#">Our Story</a>
+          <a href="#">Customer Reviews</a>
+          <a href="#">Careers</a>
+          <a href="#">Wholesale</a>
+          <a href="#">Affiliate Program</a>
+          <a href="#">Blog</a>
+        </div>
+        <div class="footer-col">
+          <h4>Support</h4>
+          <a href="#">Shipping</a>
+          <a href="#">Contact Us</a>
+          <a href="#">Lifetime Warranty</a>
+          <a href="#">Returns & Exchanges</a>
+          <a href="#">Military Discount</a>
+          <a href="#">Ring Sizing Guide</a>
+        </div>
+        <div class="footer-col footer-newsletter">
+          <div style="margin-bottom: 8px;">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="#c8922a"><path d="M7 3L3 7l4 4-4 4 4 4 4-4 4 4 4-4-4-4 4-4-4-4-4 4z"/></svg>
+          </div>
+          <div class="cta-text">Get 15% Off + Free Shipping on Your First Order!</div>
+          <div class="newsletter-form">
+            <input type="email" placeholder="Enter your email">
+            <button aria-label="Subscribe">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>&copy; 2026 Manly Bands. All rights reserved.</span>
+        <div class="footer-social">
+          <a href="#" aria-label="Instagram">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
+          </a>
+          <a href="#" aria-label="Facebook">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+          </a>
+          <a href="#" aria-label="Twitter">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/></svg>
+          </a>
+          <a href="#" aria-label="TikTok">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12a4 4 0 104 4V4a5 5 0 005 5"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== SCRIPTS ===== -->
+  <script>
+    // Sticky header shadow
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', () => {
+      header.classList.toggle('scrolled', window.scrollY > 10);
+    });
+
+    // Tab switching
+    document.querySelectorAll('.tab').forEach(tab => {
+      tab.addEventListener('click', () => {
+        document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+      });
+    });
+
+    // Best sellers carousel buttons
+    const productsGrid = document.querySelector('.products-grid');
+    document.querySelectorAll('.best-sellers .carousel-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const card = productsGrid.querySelector('.product-card');
+        const scrollAmount = card.offsetWidth + 12;
+        const dir = btn.dataset.dir === 'prev' ? -1 : 1;
+        productsGrid.scrollBy({ left: dir * scrollAmount, behavior: 'smooth' });
+      });
+    });
+
+    // Fallback images - replace broken images with gradient placeholders
+    document.querySelectorAll('img').forEach(img => {
+      img.addEventListener('error', function() {
+        this.style.display = 'none';
+        const parent = this.parentElement;
+        if (parent) {
+          parent.style.background = 'linear-gradient(135deg, #2a2a2a 0%, #444 50%, #2a2a2a 100%)';
+          parent.style.display = 'flex';
+          parent.style.alignItems = 'center';
+          parent.style.justifyContent = 'center';
+          const alt = this.alt || 'Image';
+          const label = document.createElement('span');
+          label.textContent = alt;
+          label.style.cssText = 'color: rgba(255,255,255,0.5); font-family: Oswald, sans-serif; font-size: 14px; text-transform: uppercase; letter-spacing: 2px;';
+          parent.appendChild(label);
+        }
+      });
+    });
+  </script>
+</body>
+</html>
