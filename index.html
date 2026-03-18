@@ -81,7 +81,7 @@
       align-items: center;
       gap: 10px;
     }
-    .logo svg { width: 28px; height: 28px; }
+    .logo-img { height: 61px; width: auto; }
     .nav-links {
       display: flex;
       gap: 28px;
@@ -221,7 +221,7 @@
     }
     .shop-by-material .container {
       max-width: 100%;
-      padding: 0 0 0 40px;
+      padding: 0 40px;
     }
     .shop-by-material .section-title {
       padding-right: 40px;
@@ -235,39 +235,31 @@
     }
     .material-grid {
       display: flex;
+      flex-wrap: wrap;
       gap: 24px;
-      overflow-x: auto;
-      scroll-snap-type: x mandatory;
-      -webkit-overflow-scrolling: touch;
-      scrollbar-width: none;
+      justify-content: flex-start;
       padding-bottom: 8px;
     }
-    .material-grid::-webkit-scrollbar { display: none; }
     .material-item {
       text-align: center;
       cursor: pointer;
       transition: transform 0.2s;
-      flex-shrink: 0;
-      width: 120px;
-      scroll-snap-align: start;
+      width: 200px;
     }
     .material-item:hover { transform: translateY(-4px); }
     .material-item .material-img {
       width: 100%;
-      aspect-ratio: 1;
-      border-radius: 50%;
-      overflow: hidden;
       margin-bottom: 12px;
-      background: #f5f5f5;
+      background: #fff;
     }
     .material-item .material-img img {
       width: 100%;
-      height: 100%;
-      object-fit: cover;
+      height: auto;
+      object-fit: contain;
     }
     .material-item span {
       font-family: 'Oswald', sans-serif;
-      font-size: 14px;
+      font-size: 16px;
       font-weight: 500;
       text-transform: uppercase;
       letter-spacing: 0.5px;
@@ -350,12 +342,14 @@
     .best-sellers-title-row {
       display: flex;
       justify-content: space-between;
-      align-items: flex-start;
+      align-items: center;
       padding-right: 40px;
     }
     .carousel-nav {
       display: flex;
       gap: 8px;
+      position: relative;
+      top: -15px;
     }
     .carousel-btn {
       width: 40px;
@@ -387,7 +381,7 @@
       width: 280px;
       scroll-snap-align: start;
     }
-    .product-card:hover { transform: translateY(-4px); }
+    .product-card:hover { transform: none; }
     .product-card .badge {
       position: absolute;
       top: 12px;
@@ -458,7 +452,7 @@
 
     /* ========== COLLECTION TILES (horizontal scroll, rounded cards like Knockaround) ========== */
     .collection-tiles {
-      padding: 0;
+      padding: 10px 0 0;
       background: #f7f7f7;
     }
     .collection-tiles .container {
@@ -475,8 +469,8 @@
       overflow-x: auto;
       scroll-snap-type: x mandatory;
       -webkit-overflow-scrolling: touch;
-      padding-top: 50px;
-      padding-bottom: 50px;
+      padding-top: 0;
+      padding-bottom: 30px;
       scrollbar-width: none;
     }
     .tiles-grid::-webkit-scrollbar { display: none; }
@@ -614,14 +608,14 @@
     .licensed-card {
       flex-shrink: 0;
       scroll-snap-align: start;
-      width: 425px;
+      width: 340px;
       cursor: pointer;
       transition: transform 0.2s;
     }
     .licensed-card:hover { transform: translateY(-4px); }
     .licensed-card .licensed-img {
       width: 100%;
-      height: 425px;
+      height: 340px;
       border-radius: 12px;
       overflow: hidden;
       margin-bottom: 16px;
@@ -1034,12 +1028,15 @@
         width: auto;
         flex-shrink: unset;
       }
+      .material-item {
+        width: auto;
+      }
       .material-item .material-img {
-        width: 120px;
+        width: 100%;
         margin: 0 auto 8px;
       }
       .material-item span {
-        font-size: 12px;
+        font-size: 16px;
       }
       .best-sellers .container {
         padding: 0 0 0 16px;
@@ -1059,7 +1056,7 @@
         gap: 12px;
       }
       .product-card { width: 250px; }
-      .tile { min-width: 385px; height: 290px; }
+      .tile { min-width: 308px; height: 232px; }
       .footer-columns { grid-template-columns: 1fr; gap: 30px; }
       .real-rings .container { grid-template-columns: 1fr; }
       .style-grid { grid-template-columns: 1fr; }
@@ -1095,8 +1092,7 @@
   <header class="header" id="header">
     <div class="container">
       <a href="#" class="logo">
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 3L3 7l4 4-4 4 4 4 4-4 4 4 4-4-4-4 4-4-4-4-4 4z"/></svg>
-        Manly Bands
+        <svg class="logo-img" viewBox="0 0 600 200" xmlns="http://www.w3.org/2000/svg"><path fill="#000" d="M168.5,99.2c1.3-10.2,2.6-20.3,3.9-30.5.6-.2,21.5-.2,22.7,0,.2.5.2,66,0,66.9h-15.2v-44.1h-.2c-2,14.7-3.9,29.4-5.9,44.1h-10.8c-2-14.3-4.1-28.5-6.1-42.8h-.2c0,14.2,0,28.5,0,42.8-.6.2-14.2.2-15.2,0v-66.8c.6-.2,21.6-.2,22.5,0,1.5,10.2,2.9,20.3,4.4,30.5h.2"/><path fill="#000" d="M507.2,135.6v-67c.2,0,.4,0,.7,0,6.2,0,12.5,0,18.7,0,3,0,6.1.3,9,.7,1.5.2,3,.6,4.4,1.3,4.1,1.7,6.9,5.6,7.2,10,.3,3.1.5,6.3.4,9.4v27.2c0,2.8-.1,5.5-.4,8.2-.1.9-.3,1.7-.5,2.6-.7,2.6-2.6,4.8-5.1,5.9-1.6.7-3.4,1.2-5.1,1.3-2.3.2-4.6.4-7,.3h-22.3ZM524.6,124.1c.8,0,1.5-.1,2.2-.2,1.9-.4,2.6-1,2.9-2.9.2-1.8.4-3.6.4-5.5,0-9.5,0-19,0-28.5,0-1.4-.1-2.8-.2-4.2,0-1-.7-1.9-1.6-2.3-1.2-.4-2.4-.6-3.6-.5v44.1Z"/><path fill="#000" d="M373.1,135.6v-67c.2,0,.4,0,.6,0,6.8,0,13.6,0,20.4,0,2.5,0,5.1.3,7.5.8,5.4,1.2,8.7,4.5,10,9.9.6,2.4.8,4.9.8,7.4,0,2.1,0,4.1-.5,6.1-.4,2.2-1.8,4-3.9,4.9-1.4.6-2.8,1.1-4.3,1.6.1,0,.2.1.4.2,1,.3,2,.6,2.9,1,3.2,1.1,5.6,4,6.1,7.3.4,1.9.6,3.8.5,5.7,0,3.1,0,6.1-.1,9.2,0,1.9-.3,3.8-.9,5.7-.9,3.3-3.7,5.8-7.1,6.3-3.1.5-6.2.8-9.3.7h-23.2M390.6,105.4c-.2,1.5,0,18.1,0,18.7,1.1,0,2.3-.2,3.4-.5.9-.2,1.6-.9,1.8-1.8.2-.7.3-1.4.3-2.1v-10.2c0-.8-.2-1.6-.4-2.3-.1-.5-.5-1-1.1-1.1-1.3-.4-2.6-.6-4-.6M390.6,94.9h2.1c.3,0,.5,0,.8,0,1.3,0,2.3-1.1,2.3-2.3.4-2.8.5-5.6.2-8.4,0-.8-.3-1.5-.6-2.2-.2-.6-.7-1.1-1.4-1.3-1.2-.3-2.4-.4-3.6-.4v14.8Z"/><path fill="#000" d="M463.1,68.6h14.6c3.2,9.8,6.4,19.7,9.6,29.6h.2v-29.6h14.5c.1.5.2,65.9,0,66.9h-15.2c-2.9-9.9-5.9-19.9-8.9-29.8h-.2v29.7c-.6.2-13.3.2-14.6,0v-66.9Z"/><path fill="#000" d="M284.1,135.5h-15.2c-3-9.9-5.9-19.9-8.9-29.8h-.2v29.8h-14.6v-66.8c.6-.2,13.2-.2,14.6,0l9.5,29.5h.1c0-.1,0-.2,0-.3v-29c0-14.5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,.6-.2,13.6-.2,14.5,0v66.9Z"/><path fill="#000" d="M207.1,68.6h25.2c3.3,22.3,6.6,44.6,10,66.9h-17.8c-.3-4-.6-8-.9-12h-6.2c-.4,4-.7,8-1,12h-18.1c3-22.3,5.9-44.6,8.9-66.9M217.1,111.5c2,.2,3.9.2,5.9,0l-2.6-27.3c-1.3,9.1-2.5,18.2-3.3,27.3"/><path fill="#000" d="M424.8,68.6h25.2c3.3,22.3,6.6,44.6,10,66.9h-17.8c-.3-4-.6-8-.9-12h-6.2c-.3,4-.7,7.9-1,12h-18.1c3-22.3,5.9-44.6,8.9-66.9M438.1,84.2c-1.3,9.1-2.5,18.2-3.3,27.3,2,.2,3.9.2,5.9,0l-2.6-27.3"/><path fill="#000" d="M589.2,88.9h-16.2v-.8c0-2.2,0-4.3-.1-6.4,0-.5-.1-1-.3-1.5-.2-.8-.8-1.3-1.6-1.4-1.4-.4-2.8.3-3.3,1.6-.3.7-.5,1.4-.5,2.1-.1,1.5,0,3.1.2,4.6.2,1.3.9,2.4,1.9,3.2,1.2.9,2.4,1.7,3.6,2.6,2.2,1.4,4.4,2.7,6.6,4.2,1.9,1.3,3.7,2.8,5.5,4.3,2.5,2.2,4.2,5.1,4.8,8.4.8,4,1,8.1.7,12.2-.1,1.5-.4,3-.7,4.5-.5,2.6-2,4.9-4.2,6.4-2.7,1.9-5.7,3.1-8.9,3.6-4.2.8-8.5.6-12.7-.4-2.1-.5-4.1-1.4-5.9-2.5-3.2-1.8-5.3-5-6-8.6-.5-2.6-.7-5.3-.7-8v-5.3c.6-.2,15-.2,16.2,0v9.4c0,.9.1,1.8.3,2.7.2,1.1,1.2,2,2.3,1.9,1.5.3,3-.7,3.3-2.2.3-.9.4-1.8.4-2.7,0-1.8,0-3.6-.4-5.3-.2-1.6-1.1-3-2.3-4-2.1-1.5-4.3-3.1-6.4-4.6-2.5-1.7-4.9-3.4-7.4-5.1-3.9-2.7-5.8-6.6-6.4-11.2-.5-3.8-.4-7.7.2-11.4.6-4.3,3.4-8,7.4-9.7,2.2-1,4.6-1.7,7-2,3.4-.4,6.8-.3,10.1.3,2.7.4,5.2,1.4,7.6,2.7,2.9,1.6,4.8,4.5,5.2,7.7.4,2.6.6,5.2.5,7.9v2.8"/><path fill="#000" d="M314.1,68.6h16c1.6,8.5,3.2,17,4.3,25.6,1.3-8.6,3-17.1,4.8-25.6h16c0,.3-.1.6-.2.8-2.4,8.3-4.9,16.6-7.4,24.9-1.6,5.5-3.2,10.9-4.8,16.3-.1.5-.2.9-.2,1.4v23.4c-.6.2-14.9.2-16.2,0v-23.4c0-.6,0-1.2-.3-1.8-3.9-13.7-7.8-27.3-11.8-41,0-.2-.1-.5-.2-.8"/><path fill="#000" d="M291.2,68.6h17.4v53.5h10.5c.2.6.2,12.4,0,13.4h-27.9v-66.9h0Z"/><path fill="#000" d="M53.8,98.5c0-.1-.1-.2-.2-.3-8.8-8.9-16.8-18.5-25-27.9-.2.2-.4.3-.5.5-2.2,2.4-3.8,5.4-4.4,8.6-.2,1.1-.5,2.3-.8,3.4,0,.2-.1.4-.2.7-.2,0-.5,0-.7-.1-3.4-1.2-6.4-3-9.1-5.3-1.6-1.4-2.8-3.2-3.5-5.2-.2-.4,0-.9.3-1.2,1.2-1,2.3-2,3.4-3,2.4-1.9,4.4-4.2,6.1-6.7.3-.4.6-.7.9-1.1l-.4-.6c0-.1.2-.3.3-.4,2.5-2.3,5.1-4.6,7.6-6.9.3-.3.6-.4.9-.2l3-2.4c2.7,3,5.2,6.2,7.5,9.5l-2.2,2c.1.3.2.5.4.7,1.2,2.1,2.6,4.2,3.7,6.4,2.7,5.2,6.1,10,10.1,14.3,2.7,3,5.5,5.8,8.2,8.7.1.1.3.3.5.4l.4-.4c4.7-4.5,9.1-9.4,13.1-14.6,1.8-2.4,3.4-4.9,4.8-7.6,1.3-2.5,2.7-5,4.3-7.4.1-.2.2-.4.4-.6l-2.3-2.1c2.3-3.2,4.8-6.4,7.4-9.5.3.1.5.3.7.5.6.5,1.2,1,1.8,1.5.3.2.5.6,1,.3,0,0,.4.2.5.3,1,.9,1.9,1.7,2.9,2.6l4.5,4.1.5.4-.4.7c0,0,0,.1,0,.2.3.4.6.7.8,1.1,1.7,2.4,3.6,4.6,5.9,6.4,1.4,1.2,2.7,2.4,4.2,3.6-.2.6-.4,1.1-.6,1.6-1,2-2.4,3.7-4.1,5.1-2.5,2-5.2,3.5-8.2,4.5-.1,0-.2,0-.4.1h-.3c0-.3-.2-.6-.2-.9-.5-1.9-.9-3.8-1.4-5.7-.8-2.5-2.2-4.7-4-6.5,0,0,0,0-.2,0-8.2,9.4-16.2,19.1-25.2,28,.6.5,1,1,1.6,1.4,3.8,3.4,7.6,6.7,11.4,10.1,3.4,2.9,6.5,6,9.4,9.4,4.8,5.7,8.9,11.9,12.1,18.6.4.8.7,1.7,1.1,2.5,0,0,0,.2-.1.2-1.6,1.4-3.4,2.5-5.3,3.4-.8.3-1.5.5-2.3.6-1.6.3-3.2-.7-3.9-2.2-.1-.4-.2-.8-.2-1.2,0-1.1,0-2.2,0-3.4,0-.9,0-1.7-.4-2.5-.9-2.4-2.2-4.7-3.9-6.6-1.5-1.8-3.1-3.5-4.7-5.2-5.3-5.5-10.8-10.6-16.5-15.6-1.1-1-2.2-2-3.4-3l-.8-.7c-.1,0-.2.1-.3.2-5.1,4.7-10.3,9.3-15.4,14-3,2.8-5.9,5.9-8.7,8.9-1.7,1.8-3.2,3.9-4.2,6.2-.3.6-.5,1.2-.7,1.8-.3.8-.4,1.6-.3,2.4,0,1.1,0,2.2,0,3.3,0,1.9-1.4,3.6-3.4,3.7-.2,0-.5,0-.7,0-.8-.1-1.6-.3-2.4-.6-1.8-.8-3.5-1.8-5-3.1-.3-.2-.4-.6-.2-.9h0c1-2.1,1.9-4.2,3.1-6.2,4.1-7.5,9.3-14.4,15.4-20.3,2.8-2.7,5.8-5.3,8.7-7.9,2.5-2.2,5-4.5,7.5-6.7.2-.1.3-.3.5-.4"/><path fill="#000" d="M61.9,66.1c0,.4-.1.7-.2,1,0,.8-.3,1.5-.7,2.1-.6.7-1.2.7-1.7,0-.4-.6-.7-1.3-.7-2.1,0-.3,0-.6,0-.9h-7c-.7,0-1.3-.5-1.4-1.2,0-.1,0-.3,0-.4,0-.3.3-.6.5-.8.7-.6,1.4-1.1,2-1.6.3-.3.7-.5,1.1-.8-.3-.1-.4-.2-.6-.3-.4-.2-.8-.4-1.2-.7-.5-.3-.6-.8-.4-1.3,0-.2.2-.3.4-.4.8-.7,1.7-1.3,2.6-1.9l.7-.6c-.4-.2-.7-.4-.9-.6-.2-.1-.3-.2-.5-.4-.6-.5-.7-.9-.1-1.5s.9-1.1,1.4-1.6c1.1-1.3,2.3-2.7,3.5-4,.3-.3.6-.6.9-.9.4-.4.9-.4,1.3,0h0c.2.2.4.4.6.6,1.7,1.9,3.4,3.9,5,5.8.8.9.7,1.3-.3,2-.3.2-.7.4-1.1.6l.7.6c.8.6,1.7,1.3,2.6,1.9s.7,1.1,0,1.7c-.4.3-.9.5-1.4.8l-.4.2,1.8,1.3c.5.3.9.7,1.4,1.1.5.3.6.9.4,1.4-.2.6-.7.9-1.3.9h-7Z"/><path fill="#000" d="M69.5,152.8c-.6,0-1.2-.2-1.7-.3l-6.4-1.2c-.8-.1-1.6-.1-2.3,0-2.5.6-5.1,1.2-7.6,1.8,0,0-.2,0-.2,0-.4-.9-.5-1.9-.6-2.9l.9-.3c.3,0,.6-.2.9-.3l-1.9-.4c0-1,.1-2,.4-3l2.3.4c2.1.4,4.3.8,6.4,1.1.3,0,.7,0,1,0,2.6-.6,5.3-1.3,7.9-1.9l.7-.2c.3,1,.4,1.9.5,2.9l-1.9.5s0,0,0,0l1.5.3c.2,0,.5.1.4.4,0,.8-.2,1.7-.3,2.6"/><path fill="#000" d="M60.8,128.6c0,.5.2,1,.2,1.5.4,2.2,1.2,4.3,2.4,6.2.7.9,1.1,1.8,1.4,2.8.4,1.6.1,3.3-.7,4.7-.4.6-1,1.1-1.7,1.3,0-.2,0-.4,0-.6.3-.9,0-2-.6-2.7-.1-.2-.3-.3-.4-.5-.9-1-1.6-2.1-1.9-3.4h-.1c-1.1,1.8-2.1,3.6-2,5.9,0,.5.2.9.4,1.3-.2,0-.4,0-.5-.1-1.4-.6-2.3-1.9-2.7-3.3-.3-1.3-.2-2.7.3-3.9.4-1.2.9-2.3,1.6-3.4,1.2-2,2.6-3.8,4-5.7,0,0,.1,0,.3-.2"/></svg>
       </a>
       <nav class="nav-links">
         <a href="#">Rings for Him</a>
@@ -1144,51 +1140,51 @@
       <h2 class="section-title">Shop by Material</h2>
       <div class="material-grid">
         <a href="#" class="material-item">
-          <div class="material-img"><div class="material-circle mat-gold"></div></div>
+          <div class="material-img"><img src="https://cdn.shopify.com/s/files/1/1569/4617/files/CEO_P2_8mm_H.webp?v=1762201131&width=200" alt="Gold"></div>
           <span>Gold</span>
         </a>
         <a href="#" class="material-item">
-          <div class="material-img"><div class="material-circle mat-titanium"></div></div>
+          <div class="material-img"><img src="https://cdn.shopify.com/s/files/1/1569/4617/files/The-Gandalftm-Mens-Wedding-Rings-Manly-Bands-3.webp?v=1706911713&width=200" alt="Titanium"></div>
           <span>Titanium</span>
         </a>
         <a href="#" class="material-item">
-          <div class="material-img"><div class="material-circle mat-tungsten"></div></div>
+          <div class="material-img"><img src="https://cdn.shopify.com/s/files/1/1569/4617/files/The-Baller-Mens-Wedding-Rings-Manly-Bands-3.png?v=1770216110&width=200" alt="Tungsten"></div>
           <span>Tungsten</span>
         </a>
         <a href="#" class="material-item">
-          <div class="material-img"><div class="material-circle mat-wood"></div></div>
+          <div class="material-img"><img src="https://cdn.shopify.com/s/files/1/1569/4617/files/The-Cowboy-Mens-Wedding-Rings-Manly-Bands-3.webp?v=1769105708&width=200" alt="Wood"></div>
           <span>Wood</span>
         </a>
         <a href="#" class="material-item">
-          <div class="material-img"><div class="material-circle mat-carbon"></div></div>
+          <div class="material-img"><img src="https://cdn.shopify.com/s/files/1/1569/4617/files/The-Ash-Mens-Wedding-Rings-Manly-Bands-3.webp?v=1707858319&width=200" alt="Carbon Fiber"></div>
           <span>Carbon Fiber</span>
         </a>
         <a href="#" class="material-item">
-          <div class="material-img"><div class="material-circle mat-meteorite"></div></div>
+          <div class="material-img"><img src="https://cdn.shopify.com/s/files/1/1569/4617/files/The-Guide-Mens-Wedding-Rings-Manly-Bands-3.webp?v=1706908565&width=200" alt="Meteorite"></div>
           <span>Meteorite</span>
         </a>
         <a href="#" class="material-item">
-          <div class="material-img"><div class="material-circle mat-damascus"></div></div>
+          <div class="material-img"><img src="https://cdn.shopify.com/s/files/1/1569/4617/files/The-Sage-Mens-Wedding-Rings-Manly-Bands-3.webp?v=1710795181&width=900&height=200" alt="Damascus"></div>
           <span>Damascus</span>
         </a>
         <a href="#" class="material-item">
-          <div class="material-img"><div class="material-circle mat-rose"></div></div>
+          <div class="material-img"><img src="https://cdn.shopify.com/s/files/1/1569/4617/files/MVP_P2_H_57173ec7-777d-4cb5-b0f6-e8c05134c315.webp?v=1761568782&width=200" alt="Rose Gold"></div>
           <span>Rose Gold</span>
         </a>
         <a href="#" class="material-item">
-          <div class="material-img"><div class="material-circle mat-black-zirconium"></div></div>
+          <div class="material-img"><img src="https://cdn.shopify.com/s/files/1/1569/4617/files/The-Genius-Mens-Wedding-Rings-Manly-Bands-3.webp?v=1706908268&width=200" alt="Black Zirconium"></div>
           <span>Black Zirconium</span>
         </a>
         <a href="#" class="material-item">
-          <div class="material-img"><div class="material-circle mat-antler"></div></div>
+          <div class="material-img"><img src="https://cdn.shopify.com/s/files/1/1569/4617/files/The-Oryx-Mens-Wedding-Rings-Manly-Bands-3.webp?v=1738731519&width=200" alt="Antler"></div>
           <span>Antler</span>
         </a>
         <a href="#" class="material-item">
-          <div class="material-img"><div class="material-circle mat-silicone"></div></div>
+          <div class="material-img"><img src="https://cdn.shopify.com/s/files/1/1569/4617/files/The-All-Terrain-Mens-Wedding-Rings-Manly-Bands-3.webp?v=1723150920&width=200" alt="Silicone"></div>
           <span>Silicone</span>
         </a>
         <a href="#" class="material-item">
-          <div class="material-img"><div class="material-circle mat-ceramic"></div></div>
+          <div class="material-img"><img src="https://cdn.shopify.com/s/files/1/1569/4617/files/The-Fire-Chief-Mens-Wedding-Rings-Manly-Bands-3_77568131.webp?v=1739998173&width=200" alt="Ceramic"></div>
           <span>Ceramic</span>
         </a>
       </div>
@@ -1228,10 +1224,11 @@
         <button class="tab">Titanium</button>
       </div>
       <div class="products-grid">
-        <div class="product-card">
+        <!-- GOLD -->
+        <div class="product-card" data-category="gold">
           <div class="badge">30% Off</div>
           <div class="product-img">
-            <img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=400&q=80" alt="The CEO">
+            <img src="https://cdn.shopify.com/s/files/1/1569/4617/files/CEO_P2_8mm_H.webp?v=1762201131&width=400" alt="The CEO">
           </div>
           <div class="product-rating">
             <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
@@ -1241,23 +1238,24 @@
           <div class="product-price"><span class="original">$280</span>$196</div>
           <div class="more-colors">+8 More Materials</div>
         </div>
-        <div class="product-card">
+        <div class="product-card" data-category="gold">
           <div class="badge">30% Off</div>
           <div class="product-img">
-            <img src="https://images.unsplash.com/photo-1611955167811-4711904bb9f8?w=400&q=80" alt="The Cowboy">
+            <img src="https://cdn.shopify.com/s/files/1/1569/4617/files/MVP_P2_H_57173ec7-777d-4cb5-b0f6-e8c05134c315.webp?v=1761568782&width=400" alt="The MVP">
           </div>
           <div class="product-rating">
             <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
             <span class="rating-num">4.8/5</span>
           </div>
-          <div class="product-name">The Cowboy <span class="style">| Wood Inlay</span></div>
-          <div class="product-price"><span class="original">$260</span>$182</div>
+          <div class="product-name">The MVP <span class="style">| Rose Gold</span></div>
+          <div class="product-price"><span class="original">$280</span>$196</div>
           <div class="more-colors">+5 More Materials</div>
         </div>
-        <div class="product-card">
+        <!-- BLACK -->
+        <div class="product-card" data-category="black">
           <div class="badge">30% Off</div>
           <div class="product-img">
-            <img src="https://images.unsplash.com/photo-1602751584552-8ba73aad10e1?w=400&q=80" alt="The Baller">
+            <img src="https://cdn.shopify.com/s/files/1/1569/4617/files/The-Baller-Mens-Wedding-Rings-Manly-Bands-3.png?v=1770216110&width=400" alt="The Baller">
           </div>
           <div class="product-rating">
             <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
@@ -1267,31 +1265,98 @@
           <div class="product-price"><span class="original">$260</span>$182</div>
           <div class="more-colors">+6 More Materials</div>
         </div>
-        <div class="product-card">
+        <div class="product-card" data-category="black">
           <div class="badge">30% Off</div>
           <div class="product-img">
-            <img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?w=400&q=80" alt="The Rockstar">
+            <img src="https://cdn.shopify.com/s/files/1/1569/4617/files/The-Genius-Mens-Wedding-Rings-Manly-Bands-3.webp?v=1706908268&width=400" alt="The Genius">
           </div>
           <div class="product-rating">
             <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
             <span class="rating-num">4.8/5</span>
           </div>
-          <div class="product-name">The Rockstar <span class="style">| Tungsten</span></div>
+          <div class="product-name">The Genius <span class="style">| Black Zirconium</span></div>
           <div class="product-price"><span class="original">$260</span>$182</div>
           <div class="more-colors">+4 More Materials</div>
         </div>
-        <div class="product-card">
+        <div class="product-card" data-category="black">
           <div class="badge">30% Off</div>
           <div class="product-img">
-            <img src="https://images.unsplash.com/photo-1590736969955-71cc94901144?w=400&q=80" alt="The Boss">
+            <img src="https://cdn.shopify.com/s/files/1/1569/4617/files/The-Ash-Mens-Wedding-Rings-Manly-Bands-3.webp?v=1707858319&width=400" alt="The Ash">
+          </div>
+          <div class="product-rating">
+            <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+            <span class="rating-num">4.7/5</span>
+          </div>
+          <div class="product-name">The Ash <span class="style">| Carbon Fiber</span></div>
+          <div class="product-price"><span class="original">$240</span>$168</div>
+          <div class="more-colors">+3 More Materials</div>
+        </div>
+        <!-- TUNGSTEN -->
+        <div class="product-card" data-category="tungsten">
+          <div class="badge">30% Off</div>
+          <div class="product-img">
+            <img src="https://cdn.shopify.com/s/files/1/1569/4617/files/The-Cowboy-Mens-Wedding-Rings-Manly-Bands-3.webp?v=1769105708&width=400" alt="The Cowboy">
+          </div>
+          <div class="product-rating">
+            <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+            <span class="rating-num">4.8/5</span>
+          </div>
+          <div class="product-name">The Cowboy <span class="style">| Tungsten</span></div>
+          <div class="product-price"><span class="original">$260</span>$182</div>
+          <div class="more-colors">+5 More Materials</div>
+        </div>
+        <div class="product-card" data-category="tungsten">
+          <div class="badge">30% Off</div>
+          <div class="product-img">
+            <img src="https://cdn.shopify.com/s/files/1/1569/4617/files/The-Guide-Mens-Wedding-Rings-Manly-Bands-3.webp?v=1706908565&width=400" alt="The Guide">
           </div>
           <div class="product-rating">
             <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
             <span class="rating-num">4.9/5</span>
           </div>
-          <div class="product-name">The Boss <span class="style">| Rose Gold</span></div>
+          <div class="product-name">The Guide <span class="style">| Tungsten</span></div>
+          <div class="product-price"><span class="original">$260</span>$182</div>
+          <div class="more-colors">+3 More Materials</div>
+        </div>
+        <!-- TITANIUM -->
+        <div class="product-card" data-category="titanium">
+          <div class="badge">30% Off</div>
+          <div class="product-img">
+            <img src="https://cdn.shopify.com/s/files/1/1569/4617/files/The-Gandalftm-Mens-Wedding-Rings-Manly-Bands-3.webp?v=1706911713&width=400" alt="The Gandalf">
+          </div>
+          <div class="product-rating">
+            <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+            <span class="rating-num">4.9/5</span>
+          </div>
+          <div class="product-name">The Gandalf <span class="style">| Titanium</span></div>
+          <div class="product-price"><span class="original">$300</span>$210</div>
+          <div class="more-colors">+4 More Materials</div>
+        </div>
+        <div class="product-card" data-category="titanium">
+          <div class="badge">30% Off</div>
+          <div class="product-img">
+            <img src="https://cdn.shopify.com/s/files/1/1569/4617/files/The-Sage-Mens-Wedding-Rings-Manly-Bands-3.webp?v=1710795181&width=900&height=400" alt="The Sage">
+          </div>
+          <div class="product-rating">
+            <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+            <span class="rating-num">4.8/5</span>
+          </div>
+          <div class="product-name">The Sage <span class="style">| Damascus Steel</span></div>
           <div class="product-price"><span class="original">$280</span>$196</div>
-          <div class="more-colors">+7 More Materials</div>
+          <div class="more-colors">+3 More Materials</div>
+        </div>
+        <div class="product-card" data-category="titanium">
+          <div class="badge">30% Off</div>
+          <div class="product-img">
+            <img src="https://cdn.shopify.com/s/files/1/1569/4617/files/The-Oryx-Mens-Wedding-Rings-Manly-Bands-3.webp?v=1738731519&width=400" alt="The Oryx">
+          </div>
+          <div class="product-rating">
+            <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+            <span class="rating-num">4.7/5</span>
+          </div>
+          <div class="product-name">The Oryx <span class="style">| Titanium + Antler</span></div>
+          <div class="product-price"><span class="original">$260</span>$182</div>
+          <div class="more-colors">+2 More Materials</div>
         </div>
       </div>
     </div>
@@ -1300,6 +1365,7 @@
   <!-- ===== COLLECTION TILES ===== -->
   <section class="collection-tiles">
     <div class="container">
+      <h2 class="section-title">Popular Collections</h2>
       <div class="tiles-grid">
         <div class="tile">
           <img src="https://images.unsplash.com/photo-1602751584552-8ba73aad10e1?w=600&q=80" alt="Most Popular">
@@ -1386,8 +1452,7 @@
     <div class="container">
       <div class="licensed-header">
         <div>
-          <p class="eyebrow">Officially Licensed Collections</p>
-          <h2 class="section-title">Partnerships</h2>
+          <h2 class="section-title" style="margin-bottom: 0;">Officially Licensed Collections</h2>
         </div>
         <div class="carousel-nav">
           <button class="carousel-btn"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg></button>
@@ -1414,30 +1479,6 @@
         <div class="licensed-card">
           <div class="licensed-img"><img src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=600&q=80" alt="Jeep"></div>
           <span class="licensed-name">Jeep</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== WHAT'S YOUR STYLE ===== -->
-  <section class="style-section">
-    <div class="container">
-      <h2 class="section-title">What's Your Style?</h2>
-      <div class="style-grid">
-        <div class="style-card">
-          <img src="https://images.unsplash.com/photo-1590736969955-71cc94901144?w=600&q=80" alt="Historical">
-          <div class="style-card-overlay"></div>
-          <div class="style-tag">Historical</div>
-        </div>
-        <div class="style-card">
-          <img src="https://images.unsplash.com/photo-1543294001-f7cd5d7fb516?w=600&q=80" alt="Imaginative">
-          <div class="style-card-overlay"></div>
-          <div class="style-tag">Imaginative</div>
-        </div>
-        <div class="style-card">
-          <img src="https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?w=600&q=80" alt="Rugged">
-          <div class="style-card-overlay"></div>
-          <div class="style-tag">Rugged</div>
         </div>
       </div>
     </div>
@@ -1580,11 +1621,20 @@
       header.classList.toggle('scrolled', window.scrollY > 10);
     });
 
-    // Tab switching
+    // Tab switching + filtering
     document.querySelectorAll('.tab').forEach(tab => {
       tab.addEventListener('click', () => {
         document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
         tab.classList.add('active');
+        const filter = tab.textContent.trim().toLowerCase();
+        document.querySelectorAll('.product-card').forEach(card => {
+          if (filter === 'all' || card.dataset.category === filter) {
+            card.style.display = '';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+        productsGrid.scrollTo({ left: 0 });
       });
     });
 
